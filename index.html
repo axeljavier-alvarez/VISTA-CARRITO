@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/57faba85b1.js" crossorigin="anonymous"></script>
+    <title>Carrito de compras</title>
+</head>
+<body>
+
+
+
+    <div class="container ">
+        <nav>
+            <div class="nav-links">
+                <a href="#">Inicio</a>
+                <a href="#">Productos</a>
+                <a href="#">Categorías</a>
+                <a href="#">Sobre Nosotros</a>
+            </div>
+            <i class="fa-solid fa-cart-shopping">
+                <div class="buy-card">
+                    <ul class="nav-card">
+                        <li>Imagen</li>
+                        <li>Nombre</li>
+                        <li>Precio</li>
+                        <li>Cantidad</li>
+                    </ul>
+                    <button>VACIAR CARRITO</button>
+                </div>
+            </i>
+        </nav>
+
+        <center>
+            <slider>
+
+                <img id="bannerImagen"src="img/banner.jpg">
+            </slider>
+        </center>
+       
+        <br>
+        <br>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar productos..." />
+        </div>
+        <br>
+
+        <br>
+        <h1>Productos supermercado</h1>
+        <div class="grid">
+            <div class="items">
+                <img src="https://walmartgt.vtexassets.com/arquivos/ids/354328/Cereal-Corn-Flakes-Kellogg-500gr-1-47545.jpg?v=638161440619130000">
+                <div class="info">
+                    <h3>Cereal Corn Flakes</h3>
+                    <p>Kellogs</p>
+                    <div class="precio">
+                        <p>Q.20</p>
+                        <p>Q15.5</p>
+                    </div>
+                    <button>Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="items">
+                <img src="https://walmartgt.vtexassets.com/arquivos/ids/380535/Jamon-con-Pavo-marca-Toledo-230g-1-27092.jpg?v=638251728705830000">
+                <div class="info">
+                    <h3>Jamon de Pavo</h3>
+                    <p>Toledo</p>
+                    <div class="precio">
+                        <p></p>
+                        <p>Q18.5</p>
+                    </div>
+                    <button>Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="items">
+                <img src="https://almacen.do/wp-content/uploads/2020/12/Queso-Kraft-Rallado-Cuatro-Quesos-Estilo-Mexicano-con-Toque-de-Filadelfia_-8-oz-Front.jpg">
+                <div class="info">
+                    <h3>Queso parmesano</h3>
+                    <p>Philadelphia</p>
+                    <div class="precio">
+                        <p>Q25</p>
+                        <p>Q20</p>
+                    </div>
+                    <button>Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="items">
+                <img src="https://walmartgt.vtexassets.com/arquivos/ids/510089/Mezcla-Para-Hot-Cakes-Gold-Medal-Sabor-Original-908g-1-26568.jpg?v=638469455347270000">
+                <div class="info">
+                    <h3>Caja de panqueques</h3>
+                    <p>Philadelphia</p>
+                    <div class="precio">
+                        <p></p>
+                        <p>Q23.5</p>
+                    </div>
+                    <button>Agregar al Carrito</button>
+                </div>
+            </div>
+
+            <div class="items">
+                <img src="https://walmartgt.vtexassets.com/arquivos/ids/553913/57984_02.jpg?v=638568441332400000">
+                <div class="info">
+                    <h3>Magdalena</h3>
+                    <p>Backers</p>
+                    <div class="precio">
+                        <p></p>
+                        <p>Q.20</p>
+                    </div>
+                    <button>Agregar al Carrito</button>
+                </div>
+            </div>
+            
+            
+        </div>
+        <footer>
+            <br>
+            <br>
+            Todos los derechos reservados 2024
+        </footer>
+    </div>
+
+
+    
+    <script>
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            const query = this.value.toLowerCase();
+            const items = document.querySelectorAll('.items');
+        
+            items.forEach(item => {
+                const title = item.querySelector('h3').textContent.toLowerCase();
+                const brand = item.querySelector('.info p').textContent.toLowerCase();
+        
+                if (title.includes(query) || brand.includes(query)) {
+                    item.style.display = ''; // Mostrar el item
+                } else {
+                    item.style.display = 'none'; // Ocultar el item
+                }
+            });
+        });
+        </script>
+</body>
+</html>
